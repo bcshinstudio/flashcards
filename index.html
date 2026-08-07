@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Insurance vocabulary flashcards from BC Shin Insurance." />
+  <title>Vocabulary Flashcards | BC Shin Insurance</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="study-panel" aria-labelledby="page-title">
+      <header class="page-heading">
+        <div class="title-row">
+          <div class="cards-icon" aria-hidden="true"><span></span><span></span><span></span></div>
+          <h1 id="page-title">Vocabulary Flashcards</h1>
+        </div>
+        <p>Study insurance terminology one card at a time.</p>
+      </header>
+
+      <section class="toolbar" aria-label="Flashcard controls">
+        <div class="control-group">
+          <label for="categorySelect">Category</label>
+          <select id="categorySelect"><option value="All">All Categories</option></select>
+        </div>
+        <div class="progress-area" aria-live="polite"><span id="progressText">Card 0 of 0</span></div>
+        <div class="search-group">
+          <label class="sr-only" for="searchInput">Search terms</label>
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="Search term..." autocomplete="off" />
+        </div>
+      </section>
+
+      <section class="flashcard-stage">
+        <button id="flashcard" class="flashcard" type="button" aria-label="Flip flashcard">
+          <div class="flashcard-inner">
+            <article class="card-face card-front">
+              <span id="frontCategory" class="category-badge">Category</span>
+              <h2 id="termText">Loading…</h2>
+              <div class="divider"></div>
+              <p class="flip-hint">Click or tap to reveal the definition</p>
+            </article>
+            <article class="card-face card-back">
+              <span id="backCategory" class="category-badge">Category</span>
+              <h2 id="backTermText">Term</h2>
+              <div class="divider"></div>
+              <p id="definitionText">Definition</p>
+              <p class="flip-hint">Click or tap to return to the term</p>
+            </article>
+          </div>
+        </button>
+      </section>
+
+      <section class="primary-actions" aria-label="Card navigation">
+        <button id="previousBtn" class="secondary-btn" type="button"><span aria-hidden="true">‹</span> Previous</button>
+        <button id="shuffleBtn" class="secondary-btn" type="button"><span aria-hidden="true">⤨</span> Shuffle</button>
+        <button id="nextBtn" class="primary-btn" type="button">Next <span aria-hidden="true">›</span></button>
+      </section>
+
+      <section class="secondary-actions" aria-label="Study options">
+        <button id="favoriteBtn" class="utility-btn" type="button" aria-pressed="false"><span id="favoriteIcon" aria-hidden="true">☆</span><span id="favoriteLabel">Favorite</span></button>
+        <button id="showAnswerBtn" class="utility-btn" type="button"><span aria-hidden="true">◉</span><span>Show Answer</span></button>
+        <button id="pronounceBtn" class="utility-btn" type="button"><span aria-hidden="true">🔊</span><span>Pronounce</span></button>
+      </section>
+
+      <p id="statusMessage" class="status-message" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
